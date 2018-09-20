@@ -61,7 +61,7 @@ class World(val gridWidth: Int, val gridHeight: Int) {
             }
         }
 
-        // Prefetch the neighbours
+        // Prefetch the neighbours so that we can later apply filters directly
         cells.forEach {
             it.neighbours = neighboursForCell(it)
         }
