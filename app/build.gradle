@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion build_config.compileSdkVersion
+    defaultConfig {
+        applicationId build_config.package
+        minSdkVersion build_config.minSdkVersion
+        targetSdkVersion build_config.targetSdkVersion
+        versionCode versionCode
+        versionName versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${dependency.kotlin}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${dependency.kotlinx_coroutines}"
+
+    // Android Support
+    implementation "com.android.support:appcompat-v7:${dependency.support}"
+    implementation "com.android.support:design:${dependency.support}"
+    implementation "com.android.support.constraint:constraint-layout:${dependency.constraint_layout}"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:${dependency.timber}"
+
+    // ButterKnife
+    implementation "com.jakewharton:butterknife:${dependency.butterknife}"
+    kapt "com.jakewharton:butterknife-compiler:${dependency.butterknife}"
+
+    // XML Font Views
+    implementation "com.sumitanantwar:android-xml-font-views:${dependency.xml_font_views}"
+
+    // Tests
+    testImplementation "junit:junit:${dependency.junit}"
+    implementation "com.nhaarman:mockito-kotlin:${dependency.mockito_kotlin}"
+    androidTestImplementation "com.android.support.test:runner:${dependency.runner}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${dependency.espresso}"
+}

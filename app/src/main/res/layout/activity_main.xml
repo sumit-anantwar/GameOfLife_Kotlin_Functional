@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.main.MainActivity">
+
+    <com.sumitanantwar.gameoflife_kotlin_functional.ui.views.WorldView
+        android:id="@+id/world_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Font Icon Button, TextSize (Icon Size) should be in dp -->
+    <com.sumitanantwar.android.xml_font_views.XMLFontButton
+        android:id="@+id/play_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/button_background_round"
+        android:gravity="center"
+        android:text="@string/awesome_play"
+        android:textSize="@dimen/icon_size"
+        app:font_file="FontAwesome.otf"
+        app:layout_constraintBottom_toTopOf="@+id/reset_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.sumitanantwar.android.xml_font_views.XMLFontButton
+        android:id="@+id/reset_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/button_background_round"
+        android:gravity="center"
+        android:text="@string/awesome_refresh"
+        android:textSize="@dimen/icon_size"
+        app:font_file="FontAwesome.otf"
+        app:layout_constraintBottom_toTopOf="@+id/glider_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.sumitanantwar.android.xml_font_views.XMLFontButton
+        android:id="@+id/glider_button"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/button_background_round"
+        android:gravity="center"
+        android:text="@string/awesome_glider"
+        android:textSize="@dimen/icon_size"
+        app:font_file="FontAwesome.otf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

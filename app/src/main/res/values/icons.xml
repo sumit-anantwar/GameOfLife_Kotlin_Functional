@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="awesome_play" translatable="false">&#xf144;</string>
+    <string name="awesome_pause" translatable="false">&#xf28b;</string>
+    <string name="awesome_refresh" translatable="false">&#xf021;</string>
+    <string name="awesome_glider" translatable="false">&#xf072;</string>
+
+</resources>
